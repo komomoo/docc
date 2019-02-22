@@ -1,0 +1,35 @@
+{
+  "name": "docc",
+  "version": "0.0.1",
+  "description": "🍉 为 vue 组件自动生成 markdown 表格文档",
+  "author": "momoko <ko.momo@qq.com>",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wannaxiao/docc"
+  },
+  "keywords": [
+    "vue",
+    "vue-docs",
+    "docs-generator"
+  ],
+  "bin": {
+    "docc": "bin/docc.js"
+  },
+  "scripts": {
+    "release": "sh scripts/release.sh"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@momoko/js"
+    ]
+  },
+  "dependencies": {
+    "yargs": "^13.2.1"
+  },
+  "devDependencies": {
+    "@momoko/eslint-config-js": "^0.2.1",
+    "standard-version": "^4.4.0"
+  }
+}
