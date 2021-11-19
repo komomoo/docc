@@ -2,12 +2,12 @@
   "name": "docc",
   "version": "0.0.1",
   "description": "🍉 为 vue 组件自动生成 markdown 表格文档",
-  "author": "momoko <ko.momo@qq.com>",
+  "author": "komo <ko.momo@qq.com>",
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/wannaxiao/docc"
+    "url": "https://github.com/komomoo/docc"
   },
   "keywords": [
     "vue",
@@ -26,6 +26,8 @@
     ]
   },
   "dependencies": {
+    "lodash": "^4.17.11",
+    "ora": "^3.1.0",
     "yargs": "^13.2.1"
   },
   "devDependencies": {

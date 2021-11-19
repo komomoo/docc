@@ -1,16 +1,25 @@
 /**
  * 生成文档
- * yarn docs
- * @Author momoko 2018/06
  */
 
 const path = require('path')
 const fs = require('fs')
-const promisify = require('util').promisify
 
-const readFile = promisify(fs.readFile)
-const appendFile = promisify(fs.appendFile)
-const stat = promisify(fs.stat)
+module.exports = async (cliConfig) => {
+  const pkg = pkgLoader()
+  const config = configLoader(process.cwd(), pkg, cliConfig)
+
+  if (cliConfig.debug) {
+    console.log('\npkg: ', pkg)
+    console.log('\ndioConfig: ', config)
+  }
+
+  if (!fs.existsSync(dioConfig.output.directory)) fs.mkdirSync(dioConfig.output.directory)
+
+    const spinner = ora(`🍉  Generating ${config.input} → ${config.output.name}.md`).start()
+
+    spinner.succeed()
+}
 
 const target = path.resolve(__dirname, `../../src/lib/SlimPopup/index.vue`)
 const docsPath = path.resolve(__dirname, `../../README.md`)
@@ -49,20 +58,6 @@ async function propsParse (filePath) {
   } catch (e) {
     console.error(`[propsParse] ${e}`)
   }
-}
-
-// 表格生成
-function tableCreate (props) {
-  let str = ``
-
-  for (const key in props) {
-    if (props.hasOwnProperty(key)) {
-      const item = props[key]
-      str += `| ${key} | ${item.desc} | ${item.type} | ${item.default} |\n`
-    }
-  }
-
-  return str
 }
 
 // 写文件

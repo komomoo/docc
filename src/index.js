@@ -12,6 +12,6 @@ const cliConfig = {
 
 const command = yargs.argv._[0]
 
-if (command === undefined || command === 'build') {
-  require('./build')(cliConfig)
+if (command === undefined || command === 'gen') {
+  require('./generator')(cliConfig)
 }
